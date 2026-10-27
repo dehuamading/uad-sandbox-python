@@ -8,7 +8,7 @@ def total_value(items):
 
 
 def is_low_stock(qty):
-    return qty <= LOW_STOCK_THRESHOLD
+    return qty < LOW_STOCK_THRESHOLD
 
 
 def with_tax(amount):
