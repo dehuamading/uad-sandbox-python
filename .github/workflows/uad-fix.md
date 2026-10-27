@@ -25,7 +25,7 @@ models:
     input: 0.15
     output: 0.6
 timeout-minutes: 15
-max-turns: 20
+max-turns: 40
 max-tool-calls: 60
 engine:
   id: pi
@@ -97,3 +97,8 @@ safe-outputs:
 4. **request 模式**：读取 issue #${{ inputs.issue_number }}（用 GitHub 工具）。用 uad-classify-change 分级。B/C 级：**不写任何代码**，对该 issue `add_comment` 中文方案（影响范围、风险、需要用户批准的事项），并 `add_labels` 加 `needs-approval` 和 `uad-b-level`。若确实是 A 级，按 fix 模式处理。
 5. 禁止删除、跳过或弱化测试；禁止修改 `docs/business-rules.md`；禁止把密钥写入任何输出。
 6. 最后用中文总结：等级判断、根因、做了什么、测试证据、是否回退。
+
+## 效率要求（硬性）
+- LLM 调用上限 40 次。读文件尽量一次 `cat` 多个；技能文件每个只读一次。
+- 修复验证通过后**立即**调用 `create_pull_request`（不要反复 stash/重跑测试）；失败或 B/C 级则立即调用 `create_issue`/`add_comment`。
+- 结束前必须调用一个 safe-output 工具。
