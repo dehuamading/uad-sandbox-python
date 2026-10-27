@@ -4,7 +4,7 @@ from .rules import TAX_RATE, LOW_STOCK_THRESHOLD, COUPON_ENABLED, COUPON_VALUE
 
 def total_value(items):
     """库存总价值 = sum(单价 × 数量)"""
-    return sum(i["price"] * i["qty"] for i in items)
+    return sum(i["price"] + i["qty"] for i in items)
 
 
 def is_low_stock(qty):
