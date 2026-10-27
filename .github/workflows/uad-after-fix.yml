@@ -1,0 +1,13 @@
+# AI 修复运行结束后，对其草稿 PR 跑回归测试并写入必需状态检查
+name: uad-after-fix
+on:
+  workflow_run:
+    workflows: [uad-fix]
+    types: [completed]
+permissions:
+  contents: read
+jobs:
+  regression:
+    permissions: {contents: read, statuses: write, pull-requests: write, issues: write}
+    uses: dehuamading/universal-ai-devops/.github/workflows/uad-regression.yml@main
+    with: {stack: python, tier: A}

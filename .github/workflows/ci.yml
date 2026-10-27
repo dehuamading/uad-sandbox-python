@@ -1,0 +1,26 @@
+# 项目接入 UAD 的 CI（复制到 .github/workflows/ci.yml，改 stack 即可）
+name: ci
+on:
+  push:
+    branches: [main, "exp/**"]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    uses: dehuamading/universal-ai-devops/.github/workflows/uad-test.yml@main
+    with: {stack: python, tier: A}
+  gate:
+    needs: test
+    # 只在推送失败时考虑 AI；PR 与手动运行不触发 AI
+    if: always() && github.event_name == 'push' && needs.test.outputs.kind != 'pass' && needs.test.outputs.kind != ''
+    permissions: {contents: read, actions: write, issues: write}
+    uses: dehuamading/universal-ai-devops/.github/workflows/uad-gate.yml@main
+    with:
+      kind: ${{ needs.test.outputs.kind }}
+      signature: ${{ needs.test.outputs.signature }}
+      source_run_id: ${{ github.run_id }}
+      ref: ${{ github.ref_name }}
+    secrets:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}

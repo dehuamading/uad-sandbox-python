@@ -1,0 +1,19 @@
+# 安全探针：用拥有 contents:write 的 GITHUB_TOKEN 尝试直接推送 main，期望被规则集拒绝
+name: uad-push-probe
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: |
+          git config user.name uad-probe; git config user.email probe@example.invalid
+          git commit --allow-empty -m "probe: 尝试直接推送 main（应被拒绝）"
+          set +e
+          git push origin HEAD:main 2>&1 | tee push.log; rc=${PIPESTATUS[0]}
+          git push --force origin HEAD~1:main 2>&1 | tee -a push.log; rc2=${PIPESTATUS[0]}
+          git push origin --delete main 2>&1 | tee -a push.log; rc3=${PIPESTATUS[0]}
+          echo "直接推送 rc=$rc；强制推送 rc=$rc2；删除 main rc=$rc3" | tee -a $GITHUB_STEP_SUMMARY
+          if [ $rc -ne 0 ] && [ $rc2 -ne 0 ] && [ $rc3 -ne 0 ]; then echo "✅ 三种写 main 操作均被拒绝" >> $GITHUB_STEP_SUMMARY; else echo "❌ 有操作成功，保护无效"; exit 1; fi

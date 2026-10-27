@@ -1,0 +1,6 @@
+stack: python
+test:
+  tier_a: "bash .uad-framework/adapters/python/run.sh A"
+  related: "python -m pytest -q"
+policy:
+  b_paths: [docs/business-rules.md, src/shop/rules.py]

@@ -1,0 +1,12 @@
+# 查询 DeepSeek 余额（只输出余额数字，不输出密钥）。用于费用台账起点/终点。
+name: uad-balance
+on: workflow_dispatch
+permissions: {}
+jobs:
+  balance:
+    runs-on: ubuntu-latest
+    steps:
+      - env: {DSK: "${{ secrets.DEEPSEEK_API_KEY }}"}
+        run: |
+          curl -sf -m 20 -H "Authorization: Bearer $DSK" https://api.deepseek.com/user/balance \
+          | python3 -c "import json,sys;d=json.load(sys.stdin);[print('UAD_BALANCE',b['currency'],b['total_balance']) for b in d['balance_infos']]" | tee -a $GITHUB_STEP_SUMMARY
