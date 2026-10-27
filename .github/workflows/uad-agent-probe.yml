@@ -1,0 +1,58 @@
+name: uad-agent-probe
+# 权限探针：用 GITHUB_TOKEN 验证 agent（只读）与 safe_outputs（写）作业都无法推 main、合并 PR、绕过规则。
+on:
+  push: {branches: ["probe/agent"]}
+permissions: {contents: read}
+jobs:
+  agent-readonly:   # 与 uad-fix.lock.yml 中 agent 作业相同的权限
+    runs-on: ubuntu-latest
+    permissions: {actions: read, contents: read, issues: read, pull-requests: read}
+    env: {GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}", PR: "${{ vars.UAD_PROBE_PR }}"}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 1}
+      - name: 尝试（应全部被拒绝）
+        run: |
+          set +e; f=0; : > probe.txt
+          t(){ n="$1"; shift; out=$("$@" 2>&1); rc=$?; echo "[$n] rc=$rc :: $(echo "$out" | tr '\n' ' ' | cut -c1-300)" | tee -a probe.txt; [ $rc -eq 0 ] && { echo "::error::$n 竟然成功"; f=1; }; }
+          git config user.name probe; git config user.email probe@users.noreply.github.com
+          git commit --allow-empty -qm "probe: agent push main"
+          t "推送 main" git push origin HEAD:main
+          t "API 合并 PR #$PR" gh api -X PUT repos/$R/pulls/$PR/merge -f merge_method=squash
+          t "开启 PR 自动合并" gh pr merge $PR -R $R --auto --squash
+          t "打开仓库 allow_auto_merge" gh api -X PATCH repos/$R -F allow_auto_merge=true
+          t "删除规则集" gh api -X DELETE repos/$R/rulesets/${{ vars.UAD_RULESET_ID }}
+          t "批准 PR" gh pr review $PR -R $R --approve
+          echo "allow_auto_merge=$(gh api repos/$R -q .allow_auto_merge)" | tee -a probe.txt
+          exit $f
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: {name: probe-agent-readonly, path: probe.txt}
+  safe-outputs-write:   # 与 safe_outputs 作业相同的最高写权限
+    runs-on: ubuntu-latest
+    permissions: {contents: write, issues: write, pull-requests: write}
+    env: {GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}"}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: main, fetch-depth: 1}
+      - name: 尝试绕过（应全部被拒绝）
+        run: |
+          set +e; f=0; : > probe.txt
+          t(){ n="$1"; shift; out=$("$@" 2>&1); rc=$?; echo "[$n] rc=$rc :: $(echo "$out" | tr '\n' ' ' | cut -c1-300)" | tee -a probe.txt; [ $rc -eq 0 ] && { echo "::error::$n 竟然成功"; f=1; }; }
+          git config user.name probe; git config user.email probe@users.noreply.github.com
+          before=$(git rev-parse HEAD); echo "main_before=$before" | tee -a probe.txt
+          echo probe > probe-should-not-land.txt; git add .; git commit -qm "probe: write push main"
+          t "推送 main（写权限）" git push origin HEAD:main
+          git checkout -q --orphan o; git rm -rqf . ; git commit --allow-empty -qm orphan
+          t "强推 main（写权限）" git push -f origin HEAD:main
+          t "删除 main（写权限）" git push origin :main
+          t "打开 allow_auto_merge（写权限）" gh api -X PATCH repos/$R -F allow_auto_merge=true
+          t "删除规则集（写权限）" gh api -X DELETE repos/$R/rulesets/${{ vars.UAD_RULESET_ID }}
+          t "改规则集 bypass（写权限）" gh api -X PUT repos/$R/rulesets/${{ vars.UAD_RULESET_ID }} -F enforcement=disabled
+          after=$(gh api repos/$R/commits/main -q .sha); echo "main_after=$after" | tee -a probe.txt
+          [ "$before" = "$after" ] || { echo "::error::main 被改动"; f=1; }
+          echo "allow_auto_merge=$(gh api repos/$R -q .allow_auto_merge)" | tee -a probe.txt
+          exit $f
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: {name: probe-safe-outputs-write, path: probe.txt}
