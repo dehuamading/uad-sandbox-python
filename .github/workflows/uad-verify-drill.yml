@@ -65,7 +65,7 @@ jobs:
       id: patch
       run: 'set +e
 
-        mkdir -p .uad-out; git show origin/probe/rollback-trigger:.uad-inject/ai.patch > .uad-out/ai.patch || git fetch -q origin probe/rollback-trigger && git show FETCH_HEAD:.uad-inject/ai.patch > .uad-out/ai.patch
+        mkdir -p .uad-out; git fetch -q origin "$GITHUB_SHA" && git show "$GITHUB_SHA:.uad-inject/ai.patch" > .uad-out/ai.patch || { echo "::error::取补丁失败"; exit 1; }
 
         echo "补丁来源：AI 在 run 40485282720 中的诊断实验 normalize_sku→strip().upper()（见 issue #12/#13）"
 
