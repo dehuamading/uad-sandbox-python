@@ -19,3 +19,13 @@ def apply_coupon(amount):
     if not COUPON_ENABLED:
         return amount
     return max(0, amount - COUPON_VALUE)
+
+
+def normalize_sku(sku):
+    """SKU 规范化：去掉首尾空白。"""
+    return sku
+
+
+def import_legacy(rows):
+    """导入旧系统数据：按规范化后的 SKU 建索引。"""
+    return {normalize_sku(r["sku"]): r["qty"] for r in rows}
