@@ -20,6 +20,10 @@ permissions:
 concurrency:
   group: uad-fix-${{ github.repository }}
   cancel-in-progress: false
+models:
+  default-ai-credits-pricing:
+    input: 0.15
+    output: 0.6
 timeout-minutes: 15
 max-turns: 20
 max-tool-calls: 60
