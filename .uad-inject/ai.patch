@@ -1,0 +1,13 @@
+diff --git a/src/shop/inventory.py b/src/shop/inventory.py
+index 94e6fee..e603268 100644
+--- a/src/shop/inventory.py
++++ b/src/shop/inventory.py
+@@ -23,7 +23,7 @@ def apply_coupon(amount):
+ 
+ def normalize_sku(sku):
+     """SKU 规范化：去掉首尾空白。"""
+-    return sku
++    return sku.strip().upper()
+ 
+ 
+ def import_legacy(rows):
