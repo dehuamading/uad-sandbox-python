@@ -1,5 +1,5 @@
-# gh-aw-metadata: {"schema_version":"v4","frontmatter_hash":"f034f170b5535df2bc0370448fb805031cc66ddc607fb314e6ba94999091ebba","body_hash":"8215fbca42d4653fb5ac3641dae440d7fe6f0be4f74a8012c156eb385126fd9b","compiler_version":"v0.93.5","strict":true,"agent_id":"pi","agent_model":"deepseek/deepseek-flash","engine_versions":{"pi":"1.4.0"}}
-# gh-aw-manifest: {"version":1,"secrets":["CODEX_API_KEY","COPILOT_GITHUB_TOKEN","DEEPSEEK_API_KEY","GH_AW_CI_TRIGGER_TOKEN","GH_AW_DEFAULT_OTLP_ENDPOINT","GH_AW_DEFAULT_OTLP_HEADERS","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN","OPENAI_API_KEY"],"actions":[{"repo":"actions/checkout","sha":"3d3c42e5aac5ba805825da76410c181273ba90b1","version":"v7.0.1"},{"repo":"actions/download-artifact","sha":"9000827ccba6bdab643e8b6fd33ac0654aef8333","version":"v8.0.2"},{"repo":"actions/github-script","sha":"3a2844b7e9c422d3c10d287c895573f7108da1b3","version":"v9.0.0"},{"repo":"actions/setup-node","sha":"949feb2413d6458794dcd2491c4babbbce0c15c1","version":"v7.1.0"},{"repo":"actions/setup-python","sha":"5fda3b95a4ea91299a34e894583c3862153e4b97","version":"v7.0.0"},{"repo":"actions/upload-artifact","sha":"cf430e030ddbb5b0abf93d22962f4752f3646cd9","version":"v7.0.2"},{"repo":"github/gh-aw-actions/setup","sha":"de9d416cac8ccea1a2d582cb07c4b7db96946792","version":"v0.93.5"}],"containers":[{"image":"ghcr.io/github/gh-aw-firewall/agent:0.28.70","digest":"sha256:b15ab48cbbab02904eb9bbd359a398db59690eebbea1e6934d47ed2bb407dd34","pinned_image":"ghcr.io/github/gh-aw-firewall/agent:0.28.70@sha256:b15ab48cbbab02904eb9bbd359a398db59690eebbea1e6934d47ed2bb407dd34"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.28.70","digest":"sha256:9ac8f9c7294e892c916de3da9d2588dfd8cd4931e5c39b00143266d7ed9fd52a","pinned_image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.28.70@sha256:9ac8f9c7294e892c916de3da9d2588dfd8cd4931e5c39b00143266d7ed9fd52a"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.28.70","digest":"sha256:b5bc53f4becfd96e926e63c83831f1b3c9512f713c83161d2b8c9b7204b3e917","pinned_image":"ghcr.io/github/gh-aw-firewall/squid:0.28.70@sha256:b5bc53f4becfd96e926e63c83831f1b3c9512f713c83161d2b8c9b7204b3e917"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.4.37","digest":"sha256:9c7f242f6dec2d7d7b55d4c9e07872d59b85377c6cb3de46c915a5d1ffb91442","pinned_image":"ghcr.io/github/gh-aw-mcpg:v0.4.37@sha256:9c7f242f6dec2d7d7b55d4c9e07872d59b85377c6cb3de46c915a5d1ffb91442"},{"image":"ghcr.io/github/gh-aw-node","digest":"sha256:23746305eeded20dc2726ab18bb081962d66ee3b2e09a54291afd1869ab3ef6d","pinned_image":"ghcr.io/github/gh-aw-node@sha256:23746305eeded20dc2726ab18bb081962d66ee3b2e09a54291afd1869ab3ef6d"},{"image":"ghcr.io/github/github-mcp-server:v2.0.3","digest":"sha256:250bc6ce70788207608ef74cef4397230ff2e8481218da74d6093e4bd9101132","pinned_image":"ghcr.io/github/github-mcp-server:v2.0.3@sha256:250bc6ce70788207608ef74cef4397230ff2e8481218da74d6093e4bd9101132"}],"mcp_servers":[{"name":"github","tools":["get_commit","get_file_contents","get_latest_release","get_me","get_pull_request","get_pull_request_comments","get_pull_request_diff","get_pull_request_files","get_pull_request_review_comments","get_pull_request_reviews","get_pull_request_status","get_release_by_tag","get_tag","issue_read","list_branches","list_commits","list_issue_types","list_issues","list_pull_requests","list_releases","list_starred_repositories","list_tags","pull_request_read","search_code","search_issues","search_pull_requests","search_repositories"]},{"name":"safeoutputs","tools":["add_comment","add_labels","create_issue","create_pull_request","noop","report_incomplete","report_missing_data","report_missing_tool"]}],"threat_detection":{"mode":"enabled"},"admission":false}
+# gh-aw-metadata: {"schema_version":"v4","frontmatter_hash":"2112bb87f54d1097ba947ceeb16bcc252018fcfdb800e3ede09c7c360b135481","body_hash":"13ee89f99ad72b30bbef2de2f0a9eb420f3e4271fff79892d4d02e678291469a","compiler_version":"v0.93.5","strict":true,"agent_id":"pi","agent_model":"deepseek/deepseek-flash","engine_versions":{"pi":"1.4.0"}}
+# gh-aw-manifest: {"version":1,"secrets":["CODEX_API_KEY","COPILOT_GITHUB_TOKEN","DEEPSEEK_API_KEY","GH_AW_CI_TRIGGER_TOKEN","GH_AW_DEFAULT_OTLP_ENDPOINT","GH_AW_DEFAULT_OTLP_HEADERS","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN","OPENAI_API_KEY"],"actions":[{"repo":"actions/checkout","sha":"3d3c42e5aac5ba805825da76410c181273ba90b1","version":"v7.0.1"},{"repo":"actions/checkout","sha":"fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09","version":"v5"},{"repo":"actions/download-artifact","sha":"9000827ccba6bdab643e8b6fd33ac0654aef8333","version":"v8.0.2"},{"repo":"actions/download-artifact","sha":"d3f86a106a0bac45b974a628896c90dbdf5c8093","version":"v4"},{"repo":"actions/github-script","sha":"3a2844b7e9c422d3c10d287c895573f7108da1b3","version":"v9.0.0"},{"repo":"actions/setup-node","sha":"949feb2413d6458794dcd2491c4babbbce0c15c1","version":"v7.1.0"},{"repo":"actions/setup-python","sha":"5fda3b95a4ea91299a34e894583c3862153e4b97","version":"v7.0.0"},{"repo":"actions/setup-python","sha":"ece7cb06caefa5fff74198d8649806c4678c61a1","version":"v6"},{"repo":"actions/upload-artifact","sha":"cf430e030ddbb5b0abf93d22962f4752f3646cd9","version":"v7.0.2"},{"repo":"actions/upload-artifact","sha":"ea165f8d65b6e75b540449e92b4886f43607fa02","version":"v4"},{"repo":"github/gh-aw-actions/setup","sha":"de9d416cac8ccea1a2d582cb07c4b7db96946792","version":"v0.93.5"}],"containers":[{"image":"ghcr.io/github/gh-aw-firewall/agent:0.28.70","digest":"sha256:b15ab48cbbab02904eb9bbd359a398db59690eebbea1e6934d47ed2bb407dd34","pinned_image":"ghcr.io/github/gh-aw-firewall/agent:0.28.70@sha256:b15ab48cbbab02904eb9bbd359a398db59690eebbea1e6934d47ed2bb407dd34"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.28.70","digest":"sha256:9ac8f9c7294e892c916de3da9d2588dfd8cd4931e5c39b00143266d7ed9fd52a","pinned_image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.28.70@sha256:9ac8f9c7294e892c916de3da9d2588dfd8cd4931e5c39b00143266d7ed9fd52a"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.28.70","digest":"sha256:b5bc53f4becfd96e926e63c83831f1b3c9512f713c83161d2b8c9b7204b3e917","pinned_image":"ghcr.io/github/gh-aw-firewall/squid:0.28.70@sha256:b5bc53f4becfd96e926e63c83831f1b3c9512f713c83161d2b8c9b7204b3e917"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.4.37","digest":"sha256:9c7f242f6dec2d7d7b55d4c9e07872d59b85377c6cb3de46c915a5d1ffb91442","pinned_image":"ghcr.io/github/gh-aw-mcpg:v0.4.37@sha256:9c7f242f6dec2d7d7b55d4c9e07872d59b85377c6cb3de46c915a5d1ffb91442"},{"image":"ghcr.io/github/gh-aw-node","digest":"sha256:23746305eeded20dc2726ab18bb081962d66ee3b2e09a54291afd1869ab3ef6d","pinned_image":"ghcr.io/github/gh-aw-node@sha256:23746305eeded20dc2726ab18bb081962d66ee3b2e09a54291afd1869ab3ef6d"},{"image":"ghcr.io/github/github-mcp-server:v2.0.3","digest":"sha256:250bc6ce70788207608ef74cef4397230ff2e8481218da74d6093e4bd9101132","pinned_image":"ghcr.io/github/github-mcp-server:v2.0.3@sha256:250bc6ce70788207608ef74cef4397230ff2e8481218da74d6093e4bd9101132"}],"mcp_servers":[{"name":"github","tools":["get_commit","get_file_contents","get_latest_release","get_me","get_pull_request","get_pull_request_comments","get_pull_request_diff","get_pull_request_files","get_pull_request_review_comments","get_pull_request_reviews","get_pull_request_status","get_release_by_tag","get_tag","issue_read","list_branches","list_commits","list_issue_types","list_issues","list_pull_requests","list_releases","list_starred_repositories","list_tags","pull_request_read","search_code","search_issues","search_pull_requests","search_repositories"]},{"name":"safeoutputs","tools":["add_comment","add_labels","create_issue","create_pull_request","noop","report_incomplete","report_missing_data","report_missing_tool"]}],"threat_detection":{"mode":"enabled"},"admission":false}
 # This file was automatically generated by gh-aw (v0.93.5). DO NOT EDIT. To debug this workflow, load the skill at https://github.com/github/gh-aw/blob/main/debug.md
 #
 #    ___                   _   _
@@ -39,11 +39,15 @@
 #
 # Custom actions used:
 #   - actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+#   - actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 #   - actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+#   - actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
 #   - actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
 #   - actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
 #   - actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+#   - actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
 #   - actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+#   - actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
 #   - github/gh-aw-actions/setup@de9d416cac8ccea1a2d582cb07c4b7db96946792 # v0.93.5
 #
 # Container images used:
@@ -1426,7 +1430,7 @@ jobs:
       - agent
       - detection
       - safe_outputs
-      - uad_chain_verify
+      - uad_verify
     if: >
       always() && (needs.agent.result != 'skipped' || needs.activation.outputs.lockdown_check_failed == 'true' ||
       needs.activation.outputs.oauth_token_check_failed == 'true' || needs.activation.outputs.stale_lock_file_failed == 'true' ||
@@ -1444,9 +1448,9 @@ jobs:
       cancel-in-progress: false
       queue: max
     env:
-      GH_AW_JOB_DISPLAY_NAMES: "{\"activation\":\"activation\",\"agent\":\"agent\",\"conclusion\":\"conclusion\",\"detection\":\"detection\",\"safe_outputs\":\"safe_outputs\",\"uad_chain_verify\":\"uad_chain_verify\"}"
-      GH_AW_JOB_RESULTS: "{\"activation\":{\"result\":\"${{ needs.activation.result }}\"},\"agent\":{\"result\":\"${{ needs.agent.result }}\"},\"detection\":{\"result\":\"${{ needs.detection.result }}\"},\"safe_outputs\":{\"result\":\"${{ needs.safe_outputs.result }}\"},\"uad_chain_verify\":{\"result\":\"${{ needs.uad_chain_verify.result }}\"}}"
-      GH_AW_JOB_TIMING_ELIGIBLE: "{\"activation\":true,\"agent\":true,\"conclusion\":true,\"detection\":true,\"safe_outputs\":true,\"uad_chain_verify\":true}"
+      GH_AW_JOB_DISPLAY_NAMES: "{\"activation\":\"activation\",\"agent\":\"agent\",\"conclusion\":\"conclusion\",\"detection\":\"detection\",\"safe_outputs\":\"safe_outputs\",\"uad_verify\":\"uad_verify\"}"
+      GH_AW_JOB_RESULTS: "{\"activation\":{\"result\":\"${{ needs.activation.result }}\"},\"agent\":{\"result\":\"${{ needs.agent.result }}\"},\"detection\":{\"result\":\"${{ needs.detection.result }}\"},\"safe_outputs\":{\"result\":\"${{ needs.safe_outputs.result }}\"},\"uad_verify\":{\"result\":\"${{ needs.uad_verify.result }}\"}}"
+      GH_AW_JOB_TIMING_ELIGIBLE: "{\"activation\":true,\"agent\":true,\"conclusion\":true,\"detection\":true,\"safe_outputs\":true,\"uad_verify\":true}"
       GH_AW_RUNTIME_FEATURES: ${{ vars.GH_AW_RUNTIME_FEATURES }}
     outputs:
       incomplete_count: ${{ steps.report_incomplete.outputs.incomplete_count }}
@@ -2192,17 +2196,31 @@ jobs:
           if-no-files-found: ignore
           retention-days: ${{ vars.GH_AW_DEFAULT_ARTIFACT_RETENTION_DAYS || '0' }}
 
-  uad_chain_verify:
-    name: uad_chain_verify
+  uad_verify:
+    name: uad_verify
     needs:
       - agent
       - detection
       - safe_outputs
     if: "${{ needs.detection.result == 'success' && needs.detection.outputs.detection_success == 'true' && (always() && needs.agent.outputs.has_patch == 'true' && needs.detection.outputs.detection_success == 'true') }}"
     runs-on: ubuntu-latest
-    # Permissions for the uad_chain_verify job (workflow permissions default to none).
+    # Permissions for the uad_verify job (workflow permissions default to none).
     permissions:
       actions: write
+      contents: write
+      issues: write
+      pull-requests: write
+    timeout-minutes: 15
+    env:
+      APPLY: true
+      ATTEMPT: ${{ inputs.attempt || '1' }}
+      BR: ${{ github.ref_name }}
+      FIX_RUN: ${{ github.run_id }}
+      GH_REPO: ${{ github.repository }}
+      GH_TOKEN: ${{ github.token }}
+      SIG: ${{ inputs.signature }}
+      TRACK: ${{ inputs.track_issue }}
+      UAD_OUT: .uad-out
     steps:
       - name: Configure GH_HOST for enterprise compatibility
         id: ghes-host-config
@@ -2213,13 +2231,145 @@ jobs:
           GH_HOST="${GITHUB_SERVER_URL#https://}"
           GH_HOST="${GH_HOST#http://}"
           echo "GH_HOST=${GH_HOST}" >> "$GITHUB_ENV"
-      - name: 触发确定性验证/回滚（uad-verify，不调用 AI）
-        run: GH_TOKEN="$GH_AW_GITHUB_TOKEN" gh workflow run uad-verify.yml -R "$GH_AW_GITHUB_REPOSITORY" --ref "$GH_AW_GITHUB_REF_NAME" -f fix_run_id="$GH_AW_GITHUB_RUN_ID" -f attempt="$GH_AW_EXPR_82A59F93" -f apply=true -f signature="$GH_AW_INPUTS_SIGNATURE" -f track_issue="$GH_AW_INPUTS_TRACK_ISSUE"
+      - name: 分支与次数保护
+        run: |
+          case "$BR" in lab/*) ;; *) echo "::error::uad-verify 只允许 lab/* 分支（当前 $BR），拒绝"; exit 1;; esac
+          case "$ATTEMPT" in 1|2) ;; *) echo "::error::尝试次数 $ATTEMPT 超出上限 2，停止"; exit 1;; esac
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.ref_name }}
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          path: .uad-framework
+          persist-credentials: false
+          ref: ${{ vars.UAD_FRAMEWORK_REF || 'main' }}
+          repository: dehuamading/universal-ai-devops
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: 记录修复前 SHA
+        id: pre
+        run: |
+          mkdir -p .uad-out; git fetch -q origin main
+          pre=$(git rev-parse HEAD); main_before=$(git rev-parse origin/main)
+          { echo "branch=$BR"; echo "attempt=$ATTEMPT"; echo "fix_run=$FIX_RUN"; echo "pre_fix_sha=$pre"; echo "main_before=$main_before"; } | tee .uad-out/shas.txt
+          echo "pre=$pre" >> $GITHUB_OUTPUT; echo "main_before=$main_before" >> $GITHUB_OUTPUT
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: agent
+          path: .uad-out/agent
+      - name: 下载 AI 补丁 + 守卫
+        id: patch
+        run: |
+          set +e
+          shopt -s nullglob; P=(.uad-out/agent/*.patch)
+          if [ ${#P[@]} -eq 0 ]; then echo "AI 没有产生补丁（已转为 issue/评论），无需验证"; echo has=false >> $GITHUB_OUTPUT; exit 0; fi
+          cp "${P[0]}" .uad-out/ai.patch; echo has=true >> $GITHUB_OUTPUT
+          python3 .uad-framework/tools/uad-guard.py .uad-out/ai.patch | tee .uad-out/guard.txt; echo "guard=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
+      - name: 应用补丁
+        id: apply
+        if: steps.patch.outputs.has == 'true' && steps.patch.outputs.guard == '0'
+        run: |
+          git config user.name "uad-verify[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git apply --index --exclude='.uad-evidence/*' --exclude='.uad-out/*' .uad-out/ai.patch
+          git diff --cached --stat | tee .uad-out/applied-stat.txt
+          if [ "$APPLY" = true ]; then
+            git commit -qm "uad-verify: 应用 AI 补丁（fix run $FIX_RUN，尝试 $ATTEMPT）"
+            git push origin "HEAD:$BR"
+            echo "applied_sha=$(git rev-parse HEAD)" | tee -a .uad-out/shas.txt
+            echo "applied=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          fi
+      - name: 全量回归测试（C 级）
+        id: test
+        if: steps.apply.outcome == 'success'
+        run: |
+          set +e
+          bash .uad-framework/adapters/python/run.sh C > .uad-out/verify.log 2>&1; t=$?
+          cat .uad-out/verify.log; echo "t=$t" >> $GITHUB_OUTPUT
+          sig=$(bash .uad-framework/tools/uad-signature.sh .uad-out); echo "verify_signature=$sig" | tee -a .uad-out/shas.txt
+      - name: 失败 → 回滚 lab 分支到修复前 SHA
+        id: rb
+        if: always() && steps.apply.outputs.applied != '' && steps.test.outputs.t != '0'
+        run: |
+          pre=$GH_AW_STEPS_PRE_OUTPUTS_PRE; applied=$GH_AW_STEPS_APPLY_OUTPUTS_APPLIED
+          git push --force-with-lease="$BR:$applied" origin "$pre:refs/heads/$BR"
+          now=$(gh api "repos/$GH_REPO/commits/$BR" -q .sha)
+          echo "after_rollback_sha=$now" | tee -a .uad-out/shas.txt
+          [ "$now" = "$pre" ] || { echo "::error::回滚校验失败：$now ≠ $pre"; exit 1; }
+          echo "✅ 已回退 $BR：$applied → $pre" | tee -a .uad-out/shas.txt
         env:
-          GH_AW_EXPR_82A59F93: ${{ inputs.attempt || '1' }}
-          GH_AW_GITHUB_REF_NAME: ${{ github.ref_name }}
-          GH_AW_GITHUB_REPOSITORY: ${{ github.repository }}
+          GH_AW_STEPS_APPLY_OUTPUTS_APPLIED: ${{ steps.apply.outputs.applied }}
+          GH_AW_STEPS_PRE_OUTPUTS_PRE: ${{ steps.pre.outputs.pre }}
+      - name: main 未被改动校验
+        if: always()
+        run: |
+          now=$(gh api repos/$GH_REPO/commits/main -q .sha); echo "main_after=$now" | tee -a .uad-out/shas.txt
+          [ "$now" = "$GH_AW_STEPS_PRE_OUTPUTS_MAIN_BEFORE" ] || { echo "::error::main 被改动！"; exit 1; }
+        env:
+          GH_AW_STEPS_PRE_OUTPUTS_MAIN_BEFORE: ${{ steps.pre.outputs.main_before }}
+      - name: 保存完整日志
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          if-no-files-found: warn
+          include-hidden-files: true
+          name: uad-verify-attempt-${{ inputs.attempt }}
+          path: .uad-out/
+          retention-days: ${{ vars.GH_AW_DEFAULT_ARTIFACT_RETENTION_DAYS || '0' }}
+      - name: 为下一次尝试准备证据
+        if: always() && steps.test.outputs.t != '' && steps.test.outputs.t != '0'
+        run: |
+          mkdir -p ev; cp .uad-out/verify.log ev/console.log
+          python3 - <<'PY'
+          import json,os
+          fail=open('.uad-out/failing.txt').read().split('\n') if os.path.exists('.uad-out/failing.txt') else []
+          json.dump({"kind":"test","source":"uad-verify","attempt":int(os.environ['ATTEMPT']),"failing":[f for f in fail if f],
+                     "note":"上一次 AI 补丁通过了 A 级测试但未通过 C 级全量回归，已回滚。请用 python -m pytest -q（全量）验证。"},
+                    open('ev/failure-summary.json','w'),ensure_ascii=False,indent=1)
+          PY
+      - if: always() && steps.test.outputs.t != '' && steps.test.outputs.t != '0'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: uad-evidence
+          path: ev/
+          retention-days: ${{ vars.GH_AW_DEFAULT_ARTIFACT_RETENTION_DAYS || '0' }}
+      - name: 下一步（≤2 次，之后停止）
+        if: always() && steps.patch.outputs.has == 'true'
+        run: |
+          t="$GH_AW_STEPS_TEST_OUTPUTS_T"; g="$GH_AW_STEPS_PATCH_OUTPUTS_GUARD"
+          if [ "$g" = 0 ] && [ "$t" = 0 ]; then msg="✅ 尝试 $ATTEMPT：全量回归通过"; [ -n "$TRACK" ] && gh issue comment "$TRACK" -b "$msg（verify run $GH_AW_GITHUB_RUN_ID）"; echo "$msg" >> $GITHUB_STEP_SUMMARY; exit 0; fi
+          msg="❌ 尝试 $ATTEMPT 失败（守卫=$g，测试=$t），lab 分支已回退到 $GH_AW_STEPS_PRE_OUTPUTS_PRE"
+          next=no
+          if [ "$ATTEMPT" -lt 2 ] && [ "$APPLY" = true ]; then
+            ok=yes
+            [ "$GH_AW_VARS_UAD_AI_ENABLED" = true ] || { ok=no; msg="$msg；AI 开关已关，停止"; }
+            cur=$(curl -sf -m 20 -H "Authorization: Bearer $DSK" https://api.deepseek.com/user/balance | python3 -c "import json,sys;d=json.load(sys.stdin);print(sum(float(b['total_balance']) for b in d['balance_infos'] if b['currency']=='CNY'))") || { ok=no; msg="$msg；余额查询失败，停止"; }
+            [ $ok = yes ] && python3 -c "import sys;sys.exit(0 if $BAL_START-$cur < $STOP else 1)" || { [ $ok = yes ] && msg="$msg；达到预算停止线，停止"; ok=no; }
+            n=$(gh run list -w uad-fix.lock.yml -L 50 --json createdAt -q "[.[]|select(.createdAt|startswith(\"$(date -u +%F)\"))]|length")
+            [ $ok = yes ] && [ "$n" -ge "$MAXD" ] && { ok=no; msg="$msg；达到每日上限，停止"; }
+            [ $ok = yes ] && next=yes
+          else msg="$msg；已达同一问题 2 次上限，停止，需人工介入"; fi
+          if [ $next = yes ]; then
+            gh workflow run uad-fix.lock.yml --ref "$BR" -f mode=fix -f source_run_id=$GH_AW_GITHUB_RUN_ID -f signature="$SIG" -f track_issue="$TRACK" -f attempt=2
+            msg="$msg；已触发第 2 次尝试"
+          else
+            [ -n "$TRACK" ] && gh issue edit "$TRACK" --add-label uad-failed || true
+          fi
+          [ -n "$TRACK" ] && gh issue comment "$TRACK" -b "$msg。日志工件：uad-verify-attempt-$ATTEMPT（run $GH_AW_GITHUB_SERVER_URL/$GH_REPO/actions/runs/$GH_AW_GITHUB_RUN_ID）"
+          echo "$msg" | tee -a $GITHUB_STEP_SUMMARY
+        env:
           GH_AW_GITHUB_RUN_ID: ${{ github.run_id }}
-          GH_AW_GITHUB_TOKEN: ${{ github.token }}
-          GH_AW_INPUTS_SIGNATURE: ${{ inputs.signature }}
-          GH_AW_INPUTS_TRACK_ISSUE: ${{ inputs.track_issue }}
+          GH_AW_GITHUB_SERVER_URL: ${{ github.server_url }}
+          GH_AW_STEPS_PATCH_OUTPUTS_GUARD: ${{ steps.patch.outputs.guard }}
+          GH_AW_STEPS_PRE_OUTPUTS_PRE: ${{ steps.pre.outputs.pre }}
+          GH_AW_STEPS_TEST_OUTPUTS_T: ${{ steps.test.outputs.t }}
+          GH_AW_VARS_UAD_AI_ENABLED: ${{ vars.UAD_AI_ENABLED }}
+      - name: 结论
+        if: always()
+        run: "[ \"$GH_AW_STEPS_PATCH_OUTPUTS_HAS\" != true ] || { [ \"$GH_AW_STEPS_PATCH_OUTPUTS_GUARD\" = 0 ] && [ \"$GH_AW_STEPS_TEST_OUTPUTS_T\" = 0 ]; }"
+        env:
+          GH_AW_STEPS_PATCH_OUTPUTS_GUARD: ${{ steps.patch.outputs.guard }}
+          GH_AW_STEPS_PATCH_OUTPUTS_HAS: ${{ steps.patch.outputs.has }}
+          GH_AW_STEPS_TEST_OUTPUTS_T: ${{ steps.test.outputs.t }}
