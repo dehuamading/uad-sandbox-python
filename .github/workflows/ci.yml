@@ -1,26 +1,39 @@
-# 项目接入 UAD 的 CI（复制到 .github/workflows/ci.yml，改 stack 即可）
+# 实验分支 CI（lab/*）：使用框架分支 docs/phase3-hardening（修复签名提取），其余同模板
 name: ci
 on:
   push:
-    branches: [main, "exp/**"]
+    branches: [main, "exp/**", "lab/**"]
   pull_request:
   workflow_dispatch:
+    inputs:
+      request_issue: {description: "B 级需求 issue 编号（走 request 门禁）", type: string, default: ""}
 permissions:
   contents: read
 jobs:
   test:
-    uses: dehuamading/universal-ai-devops/.github/workflows/uad-test.yml@main
-    with: {stack: python, tier: A}
+    uses: dehuamading/universal-ai-devops/.github/workflows/uad-test.yml@docs/phase3-hardening
+    with: {stack: python, tier: A, framework-ref: docs/phase3-hardening}
   gate:
     needs: test
-    # 只在推送失败时考虑 AI；PR 与手动运行不触发 AI
     if: always() && github.event_name == 'push' && needs.test.outputs.kind != 'pass' && needs.test.outputs.kind != ''
     permissions: {contents: read, actions: write, issues: write}
-    uses: dehuamading/universal-ai-devops/.github/workflows/uad-gate.yml@main
+    uses: dehuamading/universal-ai-devops/.github/workflows/uad-gate.yml@docs/phase3-hardening
     with:
       kind: ${{ needs.test.outputs.kind }}
       signature: ${{ needs.test.outputs.signature }}
       source_run_id: ${{ github.run_id }}
+      ref: ${{ github.ref_name }}
+    secrets:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+  request:
+    if: github.event_name == 'workflow_dispatch' && inputs.request_issue != ''
+    permissions: {contents: read, actions: write, issues: write}
+    uses: dehuamading/universal-ai-devops/.github/workflows/uad-gate.yml@docs/phase3-hardening
+    with:
+      kind: request
+      signature: request
+      source_run_id: ${{ github.run_id }}
+      issue_number: ${{ inputs.request_issue }}
       ref: ${{ github.ref_name }}
     secrets:
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
